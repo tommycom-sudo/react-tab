@@ -1,0 +1,45 @@
+.tabsContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.tabsList {
+  display: flex;
+  background-color: #f0f2f5;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.tab {
+  padding: 8px 20px;
+  background-color: #fff;
+  border-right: 1px solid #d9d9d9;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tab.active {
+  background-color: #e6f7ff;
+  border-bottom: 2px solid #1890ff;
+}
+
+.closeButton {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  line-height: 16px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.closeButton:hover {
+  background-color: #d9d9d9;
+}
+
+.tabContent {
+  flex: 1;
+  padding: 20px;
+  overflow: auto;
+} 

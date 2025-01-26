@@ -1,0 +1,25 @@
+.sidebar {
+  width: 200px;
+  background-color: #001529;
+  color: white;
+  padding: 20px 0;
+}
+
+.menuItem {
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background-color: #1890ff;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+.label {
+  font-size: 14px;
+} 
