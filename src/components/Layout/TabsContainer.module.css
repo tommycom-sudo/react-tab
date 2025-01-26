@@ -2,44 +2,72 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background-color: #f5f7f9;
 }
 
 .tabsList {
   display: flex;
-  background-color: #f0f2f5;
-  border-bottom: 1px solid #d9d9d9;
+  background-color: #fff;
+  border-bottom: 1px solid #e8eaed;
+  padding: 0 8px;
+  height: 40px;
+  align-items: flex-end;
+  gap: 2px;
 }
 
 .tab {
-  padding: 8px 20px;
-  background-color: #fff;
-  border-right: 1px solid #d9d9d9;
+  padding: 8px 16px;
+  background-color: #f5f7f9;
+  border: 1px solid #e8eaed;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   gap: 8px;
+  font-size: 14px;
+  color: #666;
+  height: 36px;
+  transition: all 0.2s ease;
+  position: relative;
+  top: 1px;
+}
+
+.tab:hover {
+  background-color: #fff;
 }
 
 .tab.active {
-  background-color: #e6f7ff;
+  background-color: #fff;
+  color: #1890ff;
+  height: 38px;
+  font-weight: 500;
   border-bottom: 2px solid #1890ff;
 }
 
 .closeButton {
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 16px;
-  line-height: 16px;
-  text-align: center;
   border-radius: 50%;
+  font-size: 14px;
+  color: #999;
+  margin-left: 4px;
+  transition: all 0.2s ease;
 }
 
 .closeButton:hover {
-  background-color: #d9d9d9;
+  background-color: #e6f7ff;
+  color: #1890ff;
 }
 
 .tabContent {
   flex: 1;
-  padding: 20px;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   overflow: auto;
 } 
