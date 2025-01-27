@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import TabsContainer from './TabsContainer';
+import DataStats from '../DataStats/DataStats';
 import styles from './MainLayout.module.css';
 
 const MainLayout = () => {
@@ -10,21 +11,30 @@ const MainLayout = () => {
   const [activeTab, setActiveTab] = useState(1);
 
   const handleMenuClick = (menuItem) => {
-    // 检查标签是否已经存在
-    const existingTab = tabs.find(tab => tab.title === menuItem.label);
-    if (existingTab) {
-      // 如果标签已存在，切换到该标签
-      setActiveTab(existingTab.id);
-    } else {
-      // 如果标签不存在，创建新标签
-      const newTab = {
-        id: Date.now(),
-        title: menuItem.label,
-        content: `${menuItem.label}的内容`
+    // 检查标签是否已存在
+    const existingTab = tabs.find(tab => tab.id === menuItem.id);
+    if (!existingTab) {
+      // 根据菜单项 ID 返回对应的内容
+      const getContent = (id) => {
+        switch(id) {
+          case 1:
+            return '首页内容';
+          case 2:
+            return <DataStats />;
+          case 3:
+            return '设置内容';
+          default:
+            return '内容未定义';
+        }
       };
-      setTabs([...tabs, newTab]);
-      setActiveTab(newTab.id);
+
+      setTabs([...tabs, {
+        id: menuItem.id,
+        title: menuItem.label,
+        content: getContent(menuItem.id)
+      }]);
     }
+    setActiveTab(menuItem.id);
   };
 
   return (
